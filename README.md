@@ -3,7 +3,7 @@ Software Product Lines Automated Reasoning
 
 ### What is this ?
 
-SPLAR is a java library for processing and configuring feature models. It was created by Marcilio Mendoca for the [SPLOT (SPL Online Tools) research project](http://www.splot-research.org).
+SPLAR is a java library for processing and configuring feature models. It was created by Marcilio Mendonca for the [SPLOT (SPL Online Tools) research project](http://www.splot-research.org).
 
 ### Usage
 
@@ -42,7 +42,7 @@ Using the [Eclipse m2e plugin](http://eclipse.org/m2e/):
 
 ### Differences with the original
 
-* **Maven-based build**: In constrast to the original SPLAR library, this project is build using [Maven](http://maven.apache.org/). It includes a a pom.xml that tracks the project dependencies, allowing developers automatically include these dependencies in their project and manually detect conflicts with other libraries when they occur.
+* **Maven-based build**: In contrast to the original SPLAR library, this project is build using [Maven](http://maven.apache.org/). It includes a a pom.xml that tracks the project dependencies, allowing developers automatically include these dependencies in their project and manually detect conflicts with other libraries when they occur.
 * **Tests are not included in the .jar**: The project includes source code for unit tests. Maven uses that code to test the library during compilation, but it does not include that classes in the final jar.
 
 
