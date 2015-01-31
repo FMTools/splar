@@ -22,7 +22,7 @@ If you are not using Maven, you must download the .jar library from the [release
 * [JavaBDD](http://javabdd.sourceforge.net/), version 2.10
 * [Sat4j](http://www.sat4j.org/), version 2.0.4
 * [jgrapht-core](http://jgrapht.org/), version 0.9.0
-* [org.json](https://github.com/douglascrockford/JSON-java), we use the version 20141113
+* [org.json](https://github.com/douglascrockford/JSON-java), version 20141113
 * [opencsv](http://opencsv.sourceforge.net/), version 2.4
 
 ### Maven Installation
