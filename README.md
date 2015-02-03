@@ -7,7 +7,7 @@ SPLAR is a java library for processing and configuring feature models. It was cr
 
 ### Usage
 
-If you use Maven, you must install first the SPLAR library, and use the following dependency declaration:
+If you use Maven, you must install the SPLAR library and use the following dependency declaration:
 
 ```xml
 <dependency>
@@ -17,7 +17,7 @@ If you use Maven, you must install first the SPLAR library, and use the followin
 </dependency>
 ```
 
-If you are not using Maven, you must download the .jar library from the [releases page](https://github.com/ticsw/splar/releases/tag/1.0) in Github. In addition, you must download and include in your project the following libraries:
+If you are not using Maven, you must download the .jar library from the [releases page](https://github.com/FaMoSA/splar/releases) in Github. In addition, you must download and include in your project the following libraries:
 
 * [JavaBDD](http://javabdd.sourceforge.net/), version 2.10
 * [Sat4j](http://www.sat4j.org/), version 2.0.4
