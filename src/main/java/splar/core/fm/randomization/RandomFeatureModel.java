@@ -2,7 +2,6 @@ package splar.core.fm.randomization;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
@@ -21,6 +20,8 @@ import splar.core.fm.TreeNodeRendererFactory;
 
 public class RandomFeatureModel extends FeatureModel {
 
+	private static final long serialVersionUID = 1L;
+	
 	private int numberOfFeaturesToCreate;   // total number of features in the feature model not counting feature group nodes
 	private int maxChildrenPerNode;  		// max number of children for a given node (opt, mand, and group count as one) 
 	private int minChildrenPerNode;    		// min number of children for a given node (opt, mand, and group count as one)
@@ -209,21 +210,22 @@ public class RandomFeatureModel extends FeatureModel {
 		
 }
 
+//TODO: Check the unused parameters: numConstraints and maxArity 
 class _LevelConstraintGenerator {
 
 	private FeatureModel fm;
 	private int level;
 	private int numVars;
-	private int numConstraints;
-	private int maxArity;
+//	private int numConstraints;
+//	private int maxArity;
 	private int percentage;
 	
 	public _LevelConstraintGenerator(FeatureModel fm, int level, int numVars, int numConstraints, int maxArity, int percentage) {
 		this.fm = fm;
 		this.level = level;
 		this.numVars = numVars;
-		this.numConstraints = numConstraints;
-		this.maxArity = maxArity;
+//		this.numConstraints = numConstraints;
+//		this.maxArity = maxArity;
 		this.percentage = percentage;
 	}
 	

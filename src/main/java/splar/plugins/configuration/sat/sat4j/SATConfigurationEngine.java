@@ -11,6 +11,8 @@ import org.sat4j.minisat.core.Solver;
 import org.sat4j.specs.ContradictionException;
 
 
+
+
 import splar.core.fm.FTTraversalNodeSelector;
 import splar.core.fm.FTTraversals;
 import splar.core.fm.FeatureGroup;
@@ -21,7 +23,6 @@ import splar.core.fm.configuration.ConfigurationEngineException;
 import splar.core.fm.configuration.ConfigurationStep;
 import splar.plugins.reasoners.sat.sat4j.FMReasoningWithSAT;
 import splar.plugins.reasoners.sat.sat4j.StaticVariableOrderSAT;
-
 
 public class SATConfigurationEngine extends ConfigurationEngine {
 
@@ -51,7 +52,11 @@ public class SATConfigurationEngine extends ConfigurationEngine {
 		
 	}
 	
+	@SuppressWarnings("rawtypes")
 	void addClauseToSolver(FMReasoningWithSAT reasoner, String decisionVar, int decisionValue ) throws Exception {
+		
+		//TODO: Define types for the Solver instance
+		
 		// Add user decision as a clause to the SAT problem 
 		Solver satSolver = (Solver)reasoner.getSolver();
 		int varIndex = reasoner.getVariableIndex(decisionVar); 
@@ -63,8 +68,11 @@ public class SATConfigurationEngine extends ConfigurationEngine {
 	/******************************************************************************************************
 	 * RESET
 	 *******************************************************************************************************/
-	protected synchronized ConfigurationStep resetConfiguration() throws ConfigurationEngineException {		
-		ConfigurationStep newConfStep = null;		
+	protected synchronized ConfigurationStep resetConfiguration() throws ConfigurationEngineException {
+
+		//TODO: Remove unused variables
+		// ConfigurationStep newConfStep = null;		
+
 		try {						
 			reasoner = createSATReasoner(model);
 			createConfigurationStep(model.getRoot().getID(), 1, "propagated");
@@ -105,6 +113,7 @@ public class SATConfigurationEngine extends ConfigurationEngine {
 	/******************************************************************************************************
 	 * AUTO COMPLETE
 	 *******************************************************************************************************/
+	@SuppressWarnings("rawtypes")
 	public synchronized ConfigurationStep autoComplete(boolean valueOrder) throws ConfigurationEngineException {
 		ConfigurationStep newConfStep = null;
 		try {
@@ -129,6 +138,7 @@ public class SATConfigurationEngine extends ConfigurationEngine {
 			StaticVariableOrderSAT satOrderObj = new StaticVariableOrderSAT(satVarOrder, valueOrder, reasoner.getVarName2IndexMap(), reasoner.getVarIndex2NameMap());
 			reasoner.setVariableOrderObject(satOrderObj);
 			
+			//TODO: Define types for the Solver instance
 			Solver satSolver = (Solver)reasoner.getSolver();
 			
 			if( satSolver.isSatisfiable() ) {

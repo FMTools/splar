@@ -13,6 +13,7 @@ import splar.core.constraints.CNFFormula;
 
 public class FORCEVariableOrderingHeuristic extends VariableOrderingHeuristic {
 	
+	//TODO: Define DEBUG as a configurable parameter
 	private final boolean DEBUG = false;
 	 
 	private static final int maxSpanReductionAttempts = 2;
@@ -95,6 +96,9 @@ public class FORCEVariableOrderingHeuristic extends VariableOrderingHeuristic {
 			int minSpan = span;
 			
 			if ( DEBUG ) System.out.println("Span: " + span);
+			
+			// countSteps is only used during DEBUG
+			@SuppressWarnings("unused")
 			int countSteps = 0;
 			
 			// repeat limit times or until total span stops decreasing
@@ -147,6 +151,7 @@ public class FORCEVariableOrderingHeuristic extends VariableOrderingHeuristic {
 						return 0;
 					}
 					
+					@SuppressWarnings("unused")
 					public boolean equals(Comparator<BooleanVariableInterface> comparator) {
 						if ( comparator == null ) {
 							return false;

@@ -1,9 +1,9 @@
 package splar.core.fm.configuration;
 
-import java.util.Map;
-
 public class ConfigurationEngineException extends Exception {
 	
+	private static final long serialVersionUID = 1L;
+
 	public ConfigurationEngineException(Throwable throwable) {
 		super(throwable);
 	}

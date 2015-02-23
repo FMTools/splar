@@ -1,6 +1,5 @@
 package splar.apps.generator;
 
-import java.io.File;
 import java.io.PrintStream;
 import java.text.DecimalFormat;
 import java.util.LinkedList;
@@ -8,13 +7,11 @@ import java.util.List;
 
 import org.sat4j.specs.ContradictionException;
 
-
 import splar.core.constraints.CNFGenerator;
 import splar.core.fm.FeatureModel;
 import splar.core.fm.FeatureModelStatistics;
 import splar.core.fm.randomization.Random3CNFFeatureModel;
 import splar.plugins.reasoners.sat.sat4j.FMReasoningWithSAT;
-
 
 public class FMGeneratorEngine{
 
@@ -264,7 +261,7 @@ public class FMGeneratorEngine{
 	public boolean isSAT(FeatureModel fm) throws Exception {
 //		System.out.println("Checking satisfiability...");
 		FMReasoningWithSAT r = new FMReasoningWithSAT("MiniSAT",fm, 60000);
-		long start = System.nanoTime();
+//		long start = System.nanoTime();
 		r.init();	
 //		System.out.println("Time: " + ((System.nanoTime()-start)/1E6));
 		return r.isConsistent();
@@ -272,7 +269,7 @@ public class FMGeneratorEngine{
 	
 	private void saveFeatureModel(FeatureModel fm, FeatureModelStatistics stats, String location) {
 		
-		File file = new File(location);
+//		File file = new File(location);
 				
 		PrintStream stream = null;
 		PrintStream standartOut = System.out;

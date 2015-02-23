@@ -7,6 +7,8 @@ import javax.swing.tree.DefaultTreeCellRenderer;
 
 public class FeatureTreeCellRenderer extends DefaultTreeCellRenderer {
 
+	private static final long serialVersionUID = 1L;
+
 	public FeatureTreeCellRenderer() {
 		super();
 	}

@@ -1,7 +1,5 @@
 package splar.apps.generator;
 
-import java.util.Random;
-
 import javax.swing.JFrame;
 
 /*------------------------------------------

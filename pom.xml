@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ca.uwaterloo.gsd</groupId>
 	<artifactId>splar</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 
 	<dependencies>
 
@@ -41,7 +41,7 @@
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<version>20141113</version>
+			<version>20140107</version>
 		</dependency>
 		<!-- CSV reader/writer -->
 		<dependency>

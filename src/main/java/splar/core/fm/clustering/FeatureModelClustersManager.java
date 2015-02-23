@@ -14,14 +14,11 @@ import java.util.Vector;
 import splar.core.constraints.BooleanVariable;
 import splar.core.constraints.BooleanVariableInterface;
 import splar.core.constraints.CNFClause;
-import splar.core.constraints.CNFFormula;
 import splar.core.constraints.CNFLiteral;
 import splar.core.constraints.PropositionalFormula;
 import splar.core.fm.FeatureGroup;
 import splar.core.fm.FeatureModel;
 import splar.core.fm.FeatureTreeNode;
-import splar.core.heuristics.FORCEVariableOrderingHeuristic;
-import splar.core.heuristics.FTPreOrderTraversalHeuristic;
 import splar.core.util.hypergraphs.Hyperedge;
 import splar.core.util.hypergraphs.Hypergraph;
 import splar.core.util.hypergraphs.Vertex;
@@ -67,6 +64,7 @@ public class FeatureModelClustersManager {
 		createClustersForAllNodes(clustersHypergraphs);
 	}
 	
+	@SuppressWarnings("unchecked")
 	private Map<FeatureTreeNode,Hypergraph> createHypergraphsForNodesInEC() {
 		
 		Map<FeatureTreeNode,Hypergraph> nodesClusters = new LinkedHashMap<FeatureTreeNode,Hypergraph>();
@@ -116,6 +114,7 @@ public class FeatureModelClustersManager {
 						clauseHyperEdge.addVertex(vertex);
 					}
 					
+					//TODO: Define types in the HyperGraph classes (CNF clauses?)
 					List<CNFClause> ECClauses = (List<CNFClause>)clauseHyperEdge.getProperty("EC_clauses");
 					List<CNFClause> clusterClauses = (List<CNFClause>)clauseHyperEdge.getProperty("cluster_clauses");
 					if ( ECClauses == null ) {
@@ -237,6 +236,7 @@ public class FeatureModelClustersManager {
 		return commonAncestor;
 	}	
 	
+	@SuppressWarnings("unchecked")
 	public void createClustersForAllNodes(Map<FeatureTreeNode,Hypergraph> clustersHypergraphs) {
 
 		clusters.clear();
@@ -252,6 +252,7 @@ public class FeatureModelClustersManager {
 				for( Vertex vertex : hyperedge.getVertices() ) {
 					cluster.addNode(featureModel.getNodeByID(vertex.getName()));
 				}
+				//TODO: Define types for the HyperGraphs (CNF Clauses)
 				cluster.addECClauses((List<CNFClause>)hyperedge.getProperty("EC_clauses"));
 				cluster.addClusterClauses((List<CNFClause>)hyperedge.getProperty("cluster_clauses"));
 				nodeClusters.add(cluster);
@@ -295,14 +296,17 @@ public class FeatureModelClustersManager {
 }
 
 class ClusterHypergraph extends Hypergraph {
+	@SuppressWarnings("unchecked")
 	public Hyperedge mergeHyperedges(Collection<Hyperedge> hyperEdgesSet ) {
-		Collection<Hyperedge> oldHyperEdges = hyperEdgesSet;
+//		Collection<Hyperedge> oldHyperEdges = hyperEdgesSet;
 		Hyperedge mergedHyperedge = super.mergeHyperedges(hyperEdgesSet);
 		
 		List<CNFClause> mergedECClauses = null; 
 		List<CNFClause> mergedClusterClauses = null;
 		
 		for( Hyperedge hyperedge : hyperEdgesSet ) {
+			
+			//TODO: Define types for the HyperEgde (CNF literals)
 			List<CNFClause> ECClauses = (List<CNFClause>)hyperedge.getProperty("EC_clauses");
 			if ( ECClauses != null ) {
 				if ( mergedECClauses == null ) {

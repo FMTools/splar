@@ -1,6 +1,5 @@
 package splar.core.heuristics;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Vector;
@@ -8,7 +7,6 @@ import java.util.Vector;
 import splar.core.constraints.BooleanVariable;
 import splar.core.constraints.BooleanVariableInterface;
 import splar.core.constraints.CNFFormula;
-
 
 
 public abstract class VariableOrderingHeuristic {

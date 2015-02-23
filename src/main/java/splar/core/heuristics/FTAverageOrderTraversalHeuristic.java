@@ -112,12 +112,16 @@ public class FTAverageOrderTraversalHeuristic extends FTTraversalHeuristic {
 		return nodeList;
 	}
 	
+	//TODO: Define types for entry list
+	@SuppressWarnings("unchecked")
 	public List<String> balanceWeights(Map<String,List<String>> weightsMap) {
 		
 		Set<Entry<String,List<String>>> weights = weightsMap.entrySet();
 		
 		// sort entries in non-descending order according to their weights
 		Comparator<Object> c = new Comparator<Object>() {
+			
+			//TODO: Define type for weight comparator
 			public int compare(Object entry1, Object entry2) {
 				
 				Entry<String,List<String>> nEntry1 = (Entry<String,List<String>>)entry1;  
@@ -145,15 +149,16 @@ public class FTAverageOrderTraversalHeuristic extends FTTraversalHeuristic {
 			entriesList.add((Entry<String,List<String>>)entry);
 		}
 
-		int sumLeft = 0;
-		int sumRight = 0;
+//		int sumLeft = 0;
+//		int sumRight = 0;
+
 		while( entriesList.size() > 0 ) {
 			// get maximum weight from list and add to right list
 			Entry<String,List<String>> maxEntry = entriesList.get(entriesList.size()-1);
 			entriesList.remove(entriesList.size()-1);
 			rightList.add(maxEntry.getKey());
 			
-			sumRight += maxEntry.getValue().size();
+//			sumRight += maxEntry.getValue().size();
 			
 			// search a combination of values that approximates the max weight
 			int curWeight = 0;
@@ -161,7 +166,7 @@ public class FTAverageOrderTraversalHeuristic extends FTTraversalHeuristic {
 			while( entriesList.size() > 0 && curWeight < maxEntry.getValue().size() ) {
 				Entry<String,List<String>> curEntry = entriesList.get(index);
 				curWeight += curEntry.getValue().size();
-				sumLeft += curEntry.getValue().size();
+//				sumLeft += curEntry.getValue().size();
 				entriesList.remove(index);
 				leftList.add(curEntry.getKey());
 				index--;

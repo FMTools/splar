@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import splar.core.constraints.CNFFormula;
-import splar.core.fm.FeatureModel;
 import splar.core.fm.FeatureTreeNode;
 import splar.core.fm.clustering.FeatureModelClustersManager;
 import splar.core.fm.clustering.NodeCluster;

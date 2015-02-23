@@ -33,10 +33,12 @@ public class FTPreOrderSortedECTraversalHeuristic extends FTPreOrderTraversalHeu
 		this.sortType = sortType; 
 	}
 	
+	@SuppressWarnings("unchecked")
 	protected FeatureTreeNode[] orderChildNodes(FeatureTreeNode node) {
 		
 		List<FeatureTreeNode> orderedNodes = new ArrayList<FeatureTreeNode>();
 		
+		//TODO: Check warning of unchecked assignment
 		List<CNFClause> clauses = (List<CNFClause>)node.getAttachedData();
 		
 		 // Step 1: Creates clusters based on their clause dependencies 
@@ -63,6 +65,7 @@ public class FTPreOrderSortedECTraversalHeuristic extends FTPreOrderTraversalHeu
 		return orderedNodes.toArray(new FeatureTreeNode[0]);
 	}	
 	
+	@SuppressWarnings("unchecked")
 	protected void runPreProcessing(CNFFormula cnf) {
 		featureModel.resetNodesAttachedData();
 		// attach to some nodes their correspondent CNF clauses
@@ -71,6 +74,8 @@ public class FTPreOrderSortedECTraversalHeuristic extends FTPreOrderTraversalHeu
 				CNFClause createdClause = new CNFClause();
 				FeatureTreeNode node = createClause(cnfClause, createdClause);
 				if ( createdClause.countVariables() > 1 ) {
+					
+					//TODO: Check warning about unchecked assignment
 					List<CNFClause> nodeAttachedList = (List<CNFClause>)node.getAttachedData();
 					if ( nodeAttachedList == null ) {
 						nodeAttachedList = new Vector<CNFClause>();

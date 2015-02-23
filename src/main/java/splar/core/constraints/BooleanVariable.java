@@ -1,7 +1,5 @@
 package splar.core.constraints;
 
-import splar.core.fm.FeatureTreeNode;
-
 public class BooleanVariable implements BooleanVariableInterface {
 	
 	private String name;

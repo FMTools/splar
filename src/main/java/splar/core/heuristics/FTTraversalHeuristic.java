@@ -1,6 +1,5 @@
 package splar.core.heuristics;
 
-import splar.core.constraints.CNFFormula;
 import splar.core.fm.FeatureModel;
 
 public abstract class FTTraversalHeuristic extends VariableOrderingHeuristic {

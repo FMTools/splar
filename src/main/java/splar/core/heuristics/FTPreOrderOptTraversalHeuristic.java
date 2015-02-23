@@ -1,8 +1,6 @@
 package splar.core.heuristics;
 
-import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
 
 import splar.core.fm.FeatureModel;
 import splar.core.fm.FeatureTreeNode;

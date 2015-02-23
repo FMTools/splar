@@ -20,6 +20,8 @@ import splar.core.fm.TreeNodeRendererFactory;
 
 public class RandomFeatureTreeModel extends FeatureModel {
 
+	private static final long serialVersionUID = 1L;
+
 	private int numberOfFeatures;   // total number of features in the feature model not counting feature group nodes
 	private int childFeaturesOdds;  // max number of children for a given node (opt, mand, and group count as one) 
 	private int minChildFeature;    // min number of children for a given node (opt, mand, and group count as one)

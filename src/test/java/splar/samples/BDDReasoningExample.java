@@ -47,11 +47,12 @@ public class BDDReasoningExample {
 			// BDD construction parameters
 			// - Tuning this parameters can be tricky at times and may require playing a bit
 			// - For the purpose of this example let's assume "large enough" values 
-			int bddNodeNum = 10000;  	// sets the initial size of the BDD table  
-			int bddCacheSize = 10000;  // sets the size of the BDD cache table
+			int 	bddNodeNum 		= 50000;  	// sets the initial size of the BDD table  
+			int 	bddCacheSize 	= 50000;  	// sets the size of the BDD cache table
+			long	maxBuildingTime = 60000L;	// sets the maximum building time
 			
 			// Creates the BDD reasoner
-			ReasoningWithBDD reasoner = new FMReasoningWithBDD(featureModel, heuristic, 50000, 50000, 60000, "pre-order");
+			ReasoningWithBDD reasoner = new FMReasoningWithBDD(featureModel, heuristic, bddNodeNum, bddCacheSize, maxBuildingTime, "pre-order");
 			
 			// Initialize the reasoner (BDD is created at this moment)
 			reasoner.init();

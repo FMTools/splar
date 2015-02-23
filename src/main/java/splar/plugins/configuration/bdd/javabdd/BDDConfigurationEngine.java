@@ -84,12 +84,14 @@ public class BDDConfigurationEngine extends ConfigurationEngine {
 	 * Restricts the Feature Model's by adding new constraints so that only products 
 	 * in the specified PRODUCT CATALOG can be derived
 	 *******************************************************************************************************/
+	@SuppressWarnings("resource")
 	public void addProductCatalog(String csvCatalogFilePath) throws ConfigurationEngineException {
 
 		try {
 			FeatureModel featureModel = getModel();
 			productCatalog = new ProductCatalog(featureModel);
 	
+			//TODO: Check warning about reader never closed
 			CSVReader reader = new CSVReader(new FileReader(csvCatalogFilePath));
 	
 			// How header is interpreted

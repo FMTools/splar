@@ -69,7 +69,7 @@ public class FMGeneratorGUI extends JFrame implements ActionListener {
 	JTextField ctcClauseDensityTextField = new JTextField("1.0");
 	
 	String[] data = {"Generate CONSISTENT models ONLY", "Generate INCONSISTENT models ONLY", "I DON'T CARE"};
-	JComboBox consistentyList = new JComboBox(data);
+	JComboBox<String> consistentyList = new JComboBox<String>(data);
 	
 	JButton generateButton = new JButton("Generate");
 	JButton cancelButton = new JButton("Cancel");

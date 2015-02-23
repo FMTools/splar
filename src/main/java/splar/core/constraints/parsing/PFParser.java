@@ -1,6 +1,5 @@
 package splar.core.constraints.parsing;
 
-
 /*
  *      Propositional Formulas Grammar
  *      ------------------------------
@@ -15,16 +14,16 @@ package splar.core.constraints.parsing;
 
 public class PFParser {
 
-	private int index = 0;
-	private static final int AND = 1;
-	private static final int OR = 2;
-	private static final int IMP = 3;
-	private static final int BIIMP = 4;
+//	private int index = 0;
+//	private static final int AND = 1;
+//	private static final int OR = 2;
+//	private static final int IMP = 3;
+//	private static final int BIIMP = 4;
 	
-	private static String letters = "_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	private static String digits = "0123456789";
-	private static String others = "_";
-	private String all = letters + digits + others;
+//	private static String letters = "_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//	private static String digits = "0123456789";
+//	private static String others = "_";
+//	private String all = letters + digits + others;
 		
 	public PFParser() {
 		

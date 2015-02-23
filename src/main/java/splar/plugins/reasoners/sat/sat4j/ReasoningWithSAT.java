@@ -41,10 +41,14 @@ public abstract class ReasoningWithSAT extends FMReasoningInterface {
 		return super.getVariableName(index-1);
 	}
 	
+	//TODO: Define types for the satSolver and the IOrder instance
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void setVariableOrder(String order[]) {
 		((Solver)satSolver).setOrder(new StaticVariableOrderSAT(order, false, varName2IndexMap, varIndex2NameMap));
 	}
-	
+
+	//TODO: Define types for the satSolver and the IOrder instance
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void setVariableOrderObject(IOrder order) {
 		((Solver)satSolver).setOrder(order);
 	}
@@ -114,10 +118,12 @@ public abstract class ReasoningWithSAT extends FMReasoningInterface {
 	/****************************************************************************************************************
 	 *  Checks if feature can only assume a false value (deselected)
 	 ****************************************************************************************************************/
+	@SuppressWarnings("rawtypes")
 	@Override
 	public boolean isDeadFeature(String featureId) throws FMReasoningException {
 		try {
 			if ( isConsistent() ) {
+				//TODO: Define types for the satsolver instance
 				if ( ((Solver)satSolver).assume(LiteralsUtils.posLit(getVariableIndex(featureId))) ) {
 					return !isConsistent();
 				}
@@ -135,10 +141,12 @@ public abstract class ReasoningWithSAT extends FMReasoningInterface {
 	/****************************************************************************************************************
 	 *  Checks if feature can only assume a true value (selected)
 	 ****************************************************************************************************************/
+	@SuppressWarnings("rawtypes")
 	@Override
 	public boolean isCoreFeature(String featureId) throws FMReasoningException {
 		try {
 			if ( isConsistent() ) {
+				//TODO: Define types for the satSolver instance
 				if ( ((Solver)satSolver).assume(LiteralsUtils.negLit(getVariableIndex(featureId))) ) {
 					return !isConsistent();
 				}

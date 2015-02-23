@@ -3,7 +3,9 @@ package splar.core.fm;
 
 public class FeatureGroup extends FeatureTreeNode {
 
-	private boolean isOptional = false;
+	private static final long serialVersionUID = 1L;
+	
+//	private boolean isOptional = false;
 	private int min=1, max=1;
 	
 	public FeatureGroup( String id, String name, int min, int max, IFNodeRenderer nodeRenderer ) {		

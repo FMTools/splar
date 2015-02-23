@@ -13,11 +13,11 @@ import java.util.Set;
 public class CNFGenerator {
 
 	private Map<String,byte[]> clausesMap = null;
-	private int varIndex;
+//	private int varIndex;
 
 	public CNFGenerator() {
 		clausesMap = new HashMap<String, byte[]>();
-		varIndex = -1;
+//		varIndex = -1;
 	}
 	
 	public List<CNFClause> generateCNFInstance(List<BooleanVariableInterface> variables, List<CNFClause> clauses, float clauseDensity, int arity) {
@@ -30,7 +30,7 @@ public class CNFGenerator {
 			}
 		}
 		
-		varIndex = -1;
+//		varIndex = -1;
 		List<CNFClause> createdClauses = new LinkedList<CNFClause>();
 		// number of clauses to create is clause density times number of variables
 		int numClausesToCreate = (int)(clauseDensity * variables.size())- (clauses  == null ? 0 : clauses.size());

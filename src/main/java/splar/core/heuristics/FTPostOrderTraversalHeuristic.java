@@ -2,7 +2,6 @@ package splar.core.heuristics;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 
@@ -19,6 +18,7 @@ public class FTPostOrderTraversalHeuristic extends FTTraversalHeuristic {
 		super(name, featureModel);
 	}
 	
+	@SuppressWarnings("unchecked")
 	public String[] runHeuristic(CNFFormula cnf) {
 
 //		runPreProcessing(cnf);
@@ -44,6 +44,7 @@ public class FTPostOrderTraversalHeuristic extends FTTraversalHeuristic {
 			
 			if ( curNode != null ) {
 				
+				//TODO: Check the warning about unchecked conversion
 				childNodes = (List<FeatureTreeNode>)(curNode.getAttachedData());
 				
 				if ( childNodes.size() > 0 ) {

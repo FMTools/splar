@@ -29,9 +29,6 @@ import splar.plugins.reasoners.bdd.javabdd.FMReasoningWithBDD;
 import splar.plugins.reasoners.bdd.javabdd.ReasoningWithBDD;
 
 
-
-
-
 public class GenBench {
 
 	public static void main(String args[]) {

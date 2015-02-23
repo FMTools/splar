@@ -12,6 +12,8 @@ import splar.core.constraints.BooleanVariableInterface;
 
 public class FeatureTreeNode extends DefaultMutableTreeNode implements BooleanVariableInterface, Cloneable {
 
+	private static final long serialVersionUID = 1L;
+	
 	public static final int UNKNOWN    = -1;
 	public static final int DESELECTED = 0;
 	public static final int SELECTED   = 1;

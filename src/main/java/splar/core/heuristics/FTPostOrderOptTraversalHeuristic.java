@@ -1,15 +1,9 @@
 package splar.core.heuristics;
 
 import java.util.Comparator;
-import java.util.Set;
-import java.util.Stack;
 
-import splar.core.constraints.BooleanVariableInterface;
-import splar.core.constraints.CNFFormula;
-import splar.core.fm.FeatureGroup;
 import splar.core.fm.FeatureModel;
 import splar.core.fm.FeatureTreeNode;
-
 
 public class FTPostOrderOptTraversalHeuristic extends FTPostOrderTraversalHeuristic {
 

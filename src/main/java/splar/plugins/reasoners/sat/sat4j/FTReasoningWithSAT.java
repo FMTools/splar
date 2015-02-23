@@ -274,6 +274,7 @@ public class FTReasoningWithSAT extends ReasoningWithSAT {
 	 *   - parent features prior to their children: good for unsat cases -> improves optimization 3 
 	 */
 	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public byte[][] computeValidDomains(int testValues[], boolean optimizations[], Map<String,String> stats) {
 
 		// Dimension 1: variable index
@@ -324,6 +325,8 @@ public class FTReasoningWithSAT extends ReasoningWithSAT {
 //				System.out.println("\r\n" + (varOrderIndex+1) +". Checking: " + uninstantiatedNode.getID() + "(" + getVariableIndex(uninstantiatedNode.getID()) + ")");
 
 //				init();  // create SAT solver and add clauses from FM
+				
+				//TODO: Define types for the solver instance
 				Solver solver = (Solver)getSolver();
 
 //				solver.setDBSimplificationAllowed(true);
@@ -399,6 +402,7 @@ public class FTReasoningWithSAT extends ReasoningWithSAT {
 						if ( optimizations[2] ) { 
 							Collection<FeatureTreeNode> propNodes = new LinkedList<FeatureTreeNode>();
 							if ( value == 1 ) {
+								//TODO: Check warning about unchecked assignment of propNodes
 								featureModel.getSubtreeNodes(featureModel.getNodeByID(uninstantiatedNode.getID()), (List)propNodes);
 							}
 //							else {

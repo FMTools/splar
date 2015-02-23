@@ -4,11 +4,12 @@ import java.util.EventObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.swing.JComboBox;
-import javax.swing.JTextField;
-
+//TODO: Check types for the Comparable
+@SuppressWarnings("rawtypes")
 public class FMGeneratorGUIEvent extends EventObject {
 
+	private static final long serialVersionUID = 1L;
+	
 	protected Map<String,Comparable> attributes;
 	
 	public FMGeneratorGUIEvent(Object source) {

@@ -24,9 +24,9 @@ import splar.core.constraints.CNFLiteral;
 import splar.core.constraints.PropositionalFormula;
 import splar.core.fm.clustering.FTCluster;
 
-
-
 public abstract class FeatureModel extends DefaultTreeModel implements FeatureModelListener {
+
+	private static final long serialVersionUID = 1L;
 
 	private String name = "";
 	private Map<String,String> metadata;
@@ -111,17 +111,20 @@ public abstract class FeatureModel extends DefaultTreeModel implements FeatureMo
 		return name;
 	}
 	
+	//TODO: Check the way to create feature model sub-trees
 	private FeatureTreeNode subTreeRootNode= null;
 	public FeatureModel getFeatureModelSubTree(FeatureTreeNode node) {
 		subTreeRootNode = node;
 		return new FeatureModel() {
+
+			private static final long serialVersionUID = 1L;
+
 			protected FeatureTreeNode createNodes() throws FeatureModelException {
 		    	return new SolitaireFeature(true, subTreeRootNode.getID(), subTreeRootNode.getName(), null);
 		    }
 		    
 			protected void saveNodes() {				
-			}
-			
+			}			
 		};
 	}
 	
@@ -695,6 +698,8 @@ public abstract class FeatureModel extends DefaultTreeModel implements FeatureMo
 		return false;
 	}
 
+	//TODO: Remove unused method
+	@SuppressWarnings("unused")
 	private boolean isQualifiedNode( FeatureTreeNode node, FeatureTreeNode baseNode ) {
 		// if  baseNode is a grouped node "node" must be different from all grouped sibling nodes 
 /*		if ( baseNode instanceof GroupedFeature ) {

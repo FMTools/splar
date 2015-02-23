@@ -13,14 +13,14 @@ public class StaticVariableOrderSAT extends VarOrder<ILits2> {
 
     private String[] varOrder; 
     private Map<String,Integer> varName2IndexMap;
-    private String[] varIndex2NameMap;
+//    private String[] varIndex2NameMap;
     private Boolean phase = false;  // false: negative first, true: positive first, null: random
     private int valueOrder[] = null;
     
     public StaticVariableOrderSAT(String varOrder[], Boolean phase, Map<String,Integer> varName2IndexMap, String[] varIndex2NameMap) {
     	this.varOrder = varOrder;
     	this.varName2IndexMap = varName2IndexMap;
-    	this.varIndex2NameMap = varIndex2NameMap;
+//    	this.varIndex2NameMap = varIndex2NameMap;
     	this.phase = phase;
     	this.valueOrder = null;
     }

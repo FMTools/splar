@@ -7,14 +7,19 @@ import java.util.List;
 import splar.core.constraints.Assignment;
 import splar.core.constraints.BooleanVariable;
 import splar.core.constraints.BooleanVariableInterface;
-
 import net.sf.javabdd.BDD;
+import net.sf.javabdd.BDD.AllSatIterator;
 
 public class BDDSolutionsIterator<T> implements Iterator<T> {
 
 //	private BDD.BDDIterator bit;
-	private Iterator bit;
+	
+	//TODO: Check the bit iterator
+	// private Iterator bit;
+	private AllSatIterator bit;
 	private String[] index2varMap;
+	
+	//TODO: Check if the class should be parameterized or use the Assignment type
 	private List<Assignment> assignments; 
 	private Assignment assignmentDC;   // variable dontcares (-1) are skipped  
 	int j = 0;
@@ -36,6 +41,7 @@ public class BDDSolutionsIterator<T> implements Iterator<T> {
 		return true;
 	}
 
+	@SuppressWarnings("unchecked")	
 	public T next() {	
 		Assignment next = null;
 		if (hasNext()) {
@@ -49,6 +55,7 @@ public class BDDSolutionsIterator<T> implements Iterator<T> {
 		return bit.hasNext();
 	}
 
+	@SuppressWarnings("unchecked")
 	public T nextSol() {
 		if ( hasNextSol() ) {
 			expandAssignmentSol();

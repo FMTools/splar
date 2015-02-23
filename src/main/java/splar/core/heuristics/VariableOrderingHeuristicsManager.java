@@ -3,9 +3,7 @@ package splar.core.heuristics;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import splar.core.constraints.BooleanVariableInterface;
 import splar.core.constraints.CNFFormula;
-import splar.core.fm.FeatureModel;
 
 
 public class VariableOrderingHeuristicsManager {

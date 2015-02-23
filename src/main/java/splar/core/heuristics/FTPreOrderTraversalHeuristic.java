@@ -1,10 +1,8 @@
 package splar.core.heuristics;
 
-import java.util.List;
 import java.util.Set;
 import java.util.Stack;
 
-import splar.core.constraints.BooleanVariable;
 import splar.core.constraints.BooleanVariableInterface;
 import splar.core.constraints.CNFFormula;
 import splar.core.fm.FeatureGroup;

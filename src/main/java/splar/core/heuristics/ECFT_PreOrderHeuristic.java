@@ -1,12 +1,9 @@
 package splar.core.heuristics;
 
 import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Set;
 import java.util.Stack;
 
-import splar.core.constraints.BooleanVariable;
 import splar.core.constraints.BooleanVariableInterface;
 import splar.core.constraints.CNFClause;
 import splar.core.constraints.CNFFormula;
@@ -14,7 +11,6 @@ import splar.core.constraints.PropositionalFormula;
 import splar.core.fm.FeatureGroup;
 import splar.core.fm.FeatureModel;
 import splar.core.fm.FeatureTreeNode;
-
 
 
 // First: Extra constraint variables visited in natural order (first to last)

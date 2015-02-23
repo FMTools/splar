@@ -35,13 +35,13 @@ public class FMReasoningWithBDD extends FTReasoningWithBDD {
 		}
 		else {
 //			System.out.println(">>>>>  Generating BDD for Feature Tree...");
-			long start = System.nanoTime();		
+//			long start = System.nanoTime();		
 			bdd = super.createBDDStructure(startTime, orderingFormulasStrategy);
-			long end = System.nanoTime();
+//			long end = System.nanoTime();
 //			System.out.println(">>>>>  Done Generating BDD for Feature Tree: " + ((end-start)/1E6) + " ms");
 			
 //			System.out.println(">>>>>  Generating BDD for Extra Constraints......");
-			start = System.nanoTime();
+//			start = System.nanoTime();
 			for( PropositionalFormula pf : featureModel.getConstraints() ) {
 				String formula = pf.getFormula();
 				if ( formula != null ) {
@@ -60,7 +60,7 @@ public class FMReasoningWithBDD extends FTReasoningWithBDD {
 					}
 				}
 			}
-			end = System.nanoTime();
+//			end = System.nanoTime();
 //			System.out.println(">>>>>  Done Generating BDD for Extra Constraints: " + ((end-start)/1E6) + " ms");
 		}		
 		return bdd;

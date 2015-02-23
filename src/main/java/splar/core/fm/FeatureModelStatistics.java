@@ -4,8 +4,6 @@ import java.util.Iterator;
 
 import splar.core.constraints.CNFClause;
 import splar.core.constraints.CNFFormula;
-import splar.core.constraints.PropositionalFormula;
-
 
 public class FeatureModelStatistics  {
 
@@ -235,16 +233,17 @@ public class FeatureModelStatistics  {
 		str.append("  #total nodes: ");
 		str.append((root+opt+man+grp11+grp1n+fgrp11+fgrp1n));
 		
-		String formula = "";
-		int countConstraints = 0;
-		for( Iterator<PropositionalFormula> it = fm.getConstraints().iterator() ; it.hasNext() ; ) {
-			PropositionalFormula pf = it.next();
-			formula += "(" + pf.getFormula() + ")";
-			if ( it.hasNext() ) {
-				formula += " AND ";
-			}
-			countConstraints++;
-		}  
+//		String formula = "";
+//		int countConstraints = 0;
+//		for( Iterator<PropositionalFormula> it = fm.getConstraints().iterator() ; it.hasNext() ; ) {
+//			PropositionalFormula pf = it.next();
+//			formula += "(" + pf.getFormula() + ")";
+//			if ( it.hasNext() ) {
+//				formula += " AND ";
+//			}
+//			countConstraints++;
+//		}  
+
 		try {
 //			PropositionalFormula pf = new PropositionalFormula("", formula);
 //			str.append("\n#constraints........: " + countConstraints);

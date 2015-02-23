@@ -2,6 +2,8 @@ package splar.core.fm.reasoning;
 
 public class FMReasoningException extends Exception {
 
+	private static final long serialVersionUID = 1L;
+
 	public FMReasoningException() {
 		super();
 	}

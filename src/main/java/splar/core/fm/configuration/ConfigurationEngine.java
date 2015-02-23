@@ -182,7 +182,7 @@ public abstract class ConfigurationEngine {
 			
 			newConfStep.addManualDecisionFeature(currentDecidedFeature);
 							    			
-			int index = 0;
+//			int index = 0;
 			for( String featureIdentifier : domainTable.keySet() ) {
 				FeatureTreeNode featureNode = model.getNodeByID(featureIdentifier);
 				// If feature has been instantiated at this step 
@@ -196,7 +196,7 @@ public abstract class ConfigurationEngine {
 	    				newConfStep.addPropagatedFeature(featureNode);
 					}
 				}
-				index++;
+//				index++;
 			}
 
 			// Update feature models by instantiating variables (features)

@@ -55,11 +55,13 @@ public class SPLOTCatalogConfigurationBackEnd {
 		}
 	}
 	
+	@SuppressWarnings("resource")
 	public void extractUniqueProductAttributes() {
-		
+				
 		try {
-			
-		    CSVReader reader = new CSVReader(new FileReader(productCatalogFilePath));
+	
+			//TODO: Check warning about reader is not closed
+			CSVReader reader = new CSVReader(new FileReader(productCatalogFilePath));
 		    String [] header = reader.readNext();
 		    boolean[] optional = new boolean[header.length];		    
 		    Arrays.fill(optional, false);
@@ -123,7 +125,7 @@ public class SPLOTCatalogConfigurationBackEnd {
 	}
 		
 	public List<String> toListOfIDs(String header[], String values[]) {
-		List<String> ids = new ArrayList(values.length);
+		List<String> ids = new ArrayList<String>(values.length);
     	for( int i = 0 ; i < values.length ; i++ ) {
     		ids.add(i, genID(header[i], values[i]));
     	}		
@@ -170,7 +172,7 @@ public class SPLOTCatalogConfigurationBackEnd {
 				varName2IndexMap.put(var,countVars++);
 			}				
 			System.out.println("\nVARIABLES ORDER/INDEXES -------------------");
-			List<String> sortedVars = new ArrayList(varIndex2NameMap);
+			List<String> sortedVars = new ArrayList<String>(varIndex2NameMap);
 			Collections.sort(sortedVars);
 			for( String var : sortedVars) {
 				System.out.println(varName2IndexMap.get(var) + ": " + var );
@@ -214,7 +216,7 @@ public class SPLOTCatalogConfigurationBackEnd {
 			 * extracts CNF from negated BDD 
 			 *********************************************************************************************************/		
 			System.out.println("\nCNF FORMULA -------------------");
-			int formulaIndex = 1;
+//			int formulaIndex = 1;
 //			for( BDD.AllSatIterator it = new BDD.AllSatIterator(fbdd.not()) ; it.hasNext() ; ) {
 //				byte[] path = it.nextSat();
 //				int index = 0;
@@ -242,7 +244,7 @@ public class SPLOTCatalogConfigurationBackEnd {
 			System.out.println("Solutions: " + fbdd.satCount());
 			System.out.println("Path count: " + fbdd.not().pathCount());
 			List<String> product = new LinkedList<String>();
-			int countProducts = 0;
+//			int countProducts = 0;
 			for( BDD.AllSatIterator it = new BDD.AllSatIterator(fbdd) ; it.hasNext() ; ) {
 				product.clear();
 				byte[] path = it.nextSat();

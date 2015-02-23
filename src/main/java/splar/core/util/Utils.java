@@ -25,9 +25,6 @@ import javax.swing.JPanel;
 
 import net.sf.javabdd.BDD;
 
-import org.jgrapht.DirectedGraph;
-import org.jgrapht.graph.DefaultEdge;
-
 import splar.core.constraints.BooleanVariableInterface;
 import splar.core.fm.FeatureGroup;
 import splar.core.fm.FeatureModel;

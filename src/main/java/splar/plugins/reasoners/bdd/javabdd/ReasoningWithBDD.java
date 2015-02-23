@@ -4,26 +4,20 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.LineNumberReader;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
+//TODO: Replace javax.naming.OperationNotSupportedException with java.lang.UnsupportedOperationException
 import javax.naming.OperationNotSupportedException;
 
 import net.sf.javabdd.BDD;
 import net.sf.javabdd.BDDFactory;
 import net.sf.javabdd.JFactory;
 import net.sf.javabdd.BDDFactory.ReorderMethod;
+
 import splar.core.constraints.Assignment;
-import splar.core.constraints.BooleanVariable;
-import splar.core.constraints.BooleanVariableInterface;
-import splar.core.fm.FeatureTreeNode;
-import splar.core.fm.reasoning.FMReasoningException;
 import splar.core.fm.reasoning.FMReasoningInterface;
 import splar.core.heuristics.VariableOrderingHeuristic;
 

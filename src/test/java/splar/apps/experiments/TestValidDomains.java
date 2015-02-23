@@ -153,7 +153,8 @@ public class TestValidDomains {
 					data.processingTime = riStats.get("processing-time");
 					data.opt3ElimVars = riStats.get("opt3-eliminated-vars");
 					
-					int index = 0;
+					//TOOD: Remove unused variables
+					// int index = 0;
 					data.numCommon = 0;
 					data.numDead = 0;
 					for( byte[] entry : domainTable ) {
@@ -165,7 +166,7 @@ public class TestValidDomains {
 	//						System.out.println("DEAD ===> " + ri.getVariableName(index+1));
 							data.numDead++;
 						}
-						index++;
+						// index++;
 					}
 					
 						

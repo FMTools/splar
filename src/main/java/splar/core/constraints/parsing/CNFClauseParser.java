@@ -1,7 +1,5 @@
 package splar.core.constraints.parsing;
 
-import java.util.Map;
-
 import splar.core.constraints.BooleanVariable;
 import splar.core.constraints.CNFClause;
 import splar.core.constraints.CNFLiteral;

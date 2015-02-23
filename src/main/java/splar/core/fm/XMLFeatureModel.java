@@ -26,6 +26,8 @@ import splar.core.constraints.parsing.CNFClauseParser;
 
 public class XMLFeatureModel extends FeatureModel {
 
+	private static final long serialVersionUID = 1L;
+
 	public static final int USE_VARIABLE_NAME_AS_ID = 10;
 	public static final int SET_ID_AUTOMATICALLY = 20;
 	
@@ -128,6 +130,7 @@ public class XMLFeatureModel extends FeatureModel {
 		}
 	}
 	
+	//TODO: Check warning about scanner is never closed
 	protected void parseConstraints(String constraints) throws FeatureModelException {
 		
 		CNFClauseParser cnfClauseParser = new CNFClauseParser();
@@ -151,17 +154,22 @@ public class XMLFeatureModel extends FeatureModel {
 						addConstraint(new PropositionalFormula(constraintName, cnfClause.toString2()));
 					}
 					catch(CNFClauseParseException e1) {
+						scanner.close();
 						throw new FeatureModelException("Error parsing extra constraint labelled '" + constraintName + "' (" + e1.getMessage() + "').", e1); 
 					}
 					catch(FeatureModelException e2) {
+						scanner.close();
 						throw e2; 
 					}
 					catch(Exception e3) {
+						scanner.close();
 						throw new FeatureModelException("Error parsing extra constraint labelled '" + constraintName + "' (Line: " + line + "').", e3); 
 					}
 				}
 			}
 		}
+		
+		scanner.close();
 	}
 	
 	protected FeatureTreeNode parseFeatureTree( String featureTree ) throws IOException, FeatureModelException {
