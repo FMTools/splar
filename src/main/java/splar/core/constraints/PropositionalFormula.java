@@ -68,6 +68,7 @@ public class PropositionalFormula {
 			formula = new PFParser(this).replace(replacements);
 		}
 		catch (Exception e) {
+			System.out.println( "Error : " + oldName + " -> " + newName);
 			e.printStackTrace();
 		}
 		

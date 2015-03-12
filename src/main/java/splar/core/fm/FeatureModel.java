@@ -632,6 +632,13 @@ public abstract class FeatureModel extends DefaultTreeModel implements FeatureMo
 		return root;
 	}
 	
+	// @jaime
+	public void setRoot( FeatureTreeNode root ) {
+		this.root = root;
+		countNodes();
+		
+	}
+	
 	public boolean isRoot(FeatureTreeNode node) {
 		return node.equals(getRoot());
 	}
