@@ -11,6 +11,10 @@ public class SolitaireFeature extends FeatureTreeNode {
 		this.isOptional = isOptional;
 	}
 	
+	public void setOptional (boolean optional) {
+		isOptional = optional;
+	}
+	
 	public boolean isOptional() {
 		return isOptional;
 	}
